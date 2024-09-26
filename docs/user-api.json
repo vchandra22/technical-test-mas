@@ -1,0 +1,295 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "User API",
+        "version": "1.0"
+    },
+    "servers": [{ "url": "http://localhost:8000" }],
+    "paths": {
+        "/api/users": {
+            "post": {
+                "description": "Create new users",
+                "requestBody": {
+                    "description": "Create new users",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "age": {
+                                        "type": "number"
+                                    },
+                                    "job_title": {
+                                        "type": "string"
+                                    },
+                                    "company": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success create users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "age": {
+                                                    "type": "number"
+                                                },
+                                                "job_title": {
+                                                    "type": "string"
+                                                },
+                                                "company": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "errors": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "description": "Search users",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query"
+                    },
+                    {
+                        "name": "age",
+                        "in": "query"
+                    },
+                    {
+                        "name": "job_title",
+                        "in": "query"
+                    },
+                    {
+                        "name": "company",
+                        "in": "query"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success search users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "age": {
+                                                        "type": "number"
+                                                    },
+                                                    "job_title": {
+                                                        "type": "string"
+                                                    },
+                                                    "company": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "errors": {
+                                            "type": "object"
+                                        },
+                                        "meta": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/{id}": {
+            "put": {
+                "description": "Update users",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update users",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "age": {
+                                        "type": "number"
+                                    },
+                                    "job_title": {
+                                        "type": "string"
+                                    },
+                                    "company": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success update users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "age": {
+                                                    "type": "number"
+                                                },
+                                                "job_title": {
+                                                    "type": "string"
+                                                },
+                                                "company": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "errors": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "description": "Get users",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success get users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "age": {
+                                                    "type": "number"
+                                                },
+                                                "job_title": {
+                                                    "type": "string"
+                                                },
+                                                "company": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "errors": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Remove users",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success delete users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "boolean"
+                                        },
+                                        "errors": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
