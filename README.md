@@ -5,8 +5,10 @@
 -   Stable version of [Docker](https://docs.docker.com/engine/install/)
 -   Compatible version of [Docker Compose](https://docs.docker.com/compose/install/#install-compose)
 
-###   Dokumentasi API menggunakan standar Open API versi 3 dapat dilihat dalam folder docs/user-api.json secara lengkap.
-###   Unit Test API dapat dilihat pada folder `tests/Feature` di dalam project. Anda dapat menemukan beberapa contoh pengujian untuk memastikan fungsi API berjalan dengan baik.
+### Mandatory
+
+-   Dokumentasi API menggunakan standar Open API versi 3 dapat dilihat dalam folder docs/user-api.json secara lengkap.
+-   Unit Test API dapat dilihat pada folder `tests/Feature/UserTest` di dalam project. Anda dapat menemukan beberapa contoh pengujian untuk memastikan fungsi API berjalan dengan baik.
 
 # Cara - Cara
 
@@ -26,7 +28,7 @@
 -   Menjalankan artisan commands atau manage package dapat dilakukan dalam container
 -   Gunakan perintah `docker compose exec php bash`
 -   Jalankan perintah `php artisan key:generate` kemudian `php artisan migrate`
--   Jalankan perintah `php artisan db:seed` 
+-   Jalankan perintah `php artisan db:seed`
 
 ### Cara mengakses phpmyadmin/db
 
