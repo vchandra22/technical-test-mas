@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// route untuk create new users
+Route::post('/users', [UserController::class, 'store']);
+
+// route untuk get user berdasarkan id
+Route::get('/users/{id}', [UserController::class, 'show']);
+
+// route untuk get all users
+Route::get('/users', [UserController::class, 'search']);
+
+// route untuk menhapus users
+Route::delete('/users/{id}', [UserController::class, 'destroy']);
+
+//route untuk update data users
+Route::put('/users/{id}', [UserController::class, 'update']);
