@@ -38,6 +38,20 @@
                         "description": "Success create users",
                         "content": {
                             "application/json": {
+                                "examples": {
+                                    "success": {
+                                        "description": "Success register user",
+                                        "value": {
+                                            "data": {
+                                                "id": 1,
+                                                "name": "John Doe",
+                                                "age": "35",
+                                                "job_title": "IT Programming",
+                                                "company": "PT Maha Akbar Sejahtera"
+                                            }
+                                        }
+                                    }
+                                },
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -112,9 +126,6 @@
                                             "items": {
                                                 "type": "object",
                                                 "properties": {
-                                                    "id": {
-                                                        "type": "number"
-                                                    },
                                                     "name": {
                                                         "type": "string"
                                                     },
@@ -225,18 +236,28 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success get users",
+                        "description": "Success get user",
                         "content": {
                             "application/json": {
+                                "examples": {
+                                    "success": {
+                                        "description": "Success get user",
+                                        "value": {
+                                            "data": {
+                                                "name": "John Doe",
+                                                "age": "35",
+                                                "job_title": "IT Programming",
+                                                "company": "PT Maha Akbar Sejahtera"
+                                            }
+                                        }
+                                    }
+                                },
                                 "schema": {
                                     "type": "object",
                                     "properties": {
                                         "data": {
                                             "type": "object",
                                             "properties": {
-                                                "id": {
-                                                    "type": "number"
-                                                },
                                                 "name": {
                                                     "type": "string"
                                                 },
